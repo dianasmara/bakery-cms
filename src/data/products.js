@@ -150,33 +150,6 @@ export const products = [
         image: RotiHajatan2,
         description: "Paket premium dengan varian roti spesial.",
         benefits: ["Lengkap", "Eksklusif"]
-    },
-    {
-        id: 1,
-        name: "Blueberry",
-        price: 3500,
-        category: "Roti Reguler",
-        image: "/src/assets/blueberry.svg", // Placeholder
-        description: "Roti lembut dengan topping selai blueberry dan scramble.",
-        benefits: ["Rasa Enak", "Kualitas Terbaik"]
-    },
-    {
-        id: 2,
-        name: "Srikaya",
-        price: 3500,
-        category: "Roti Reguler",
-        image: "/src/assets/srikaya.svg", // Placeholder
-        description: "Roti manis dengan isian srikaya yang lumer di mulut.",
-        benefits: ["Rasa Autentik", "Tekstur Lembut"]
-    },
-    {
-        id: 3,
-        name: "Kacang Hijau",
-        price: 4000,
-        category: "Roti Reguler",
-        image: "/src/assets/kacang_hijau.svg", // Placeholder
-        description: "Roti isi kacang hijau asli yang manis dan gurih.",
-        benefits: ["Kaya Protein", "Tanpa Pengawet"]
     }
 ];
 

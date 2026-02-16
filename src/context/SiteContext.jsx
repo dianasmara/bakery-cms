@@ -18,7 +18,7 @@ export const SiteProvider = ({ children }) => {
             title: "Nikmati Kelembutan di Setiap Gigitan",
             subtitle: "OLEVYA BAKERY menghadirkan roti dan kue berkualitas dengan cita rasa istimewa untuk momen spesial Anda.",
             ctaText: "Belanja Sekarang",
-            image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=2000",
+            image: "https://image2url.com/r2/default/images/1771268190173-c2f95791-8992-41de-80b9-7d1097282b2c.png",
             bgSize: "cover",
             bgColor: "#ffb35c"
         },
