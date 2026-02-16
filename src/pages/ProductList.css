@@ -17,7 +17,7 @@
 .filter-sidebar {
     flex: 0 0 280px;
     position: sticky;
-    top: 100px;
+    bottom: 0;
     height: fit-content;
 }
 
