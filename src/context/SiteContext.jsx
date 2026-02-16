@@ -52,7 +52,7 @@ export const SiteProvider = ({ children }) => {
         contact: {
             title: "Mari Terhubung",
             subtitle: "Kami selalu terbuka untuk diskusi pesanan baru, ide kreatif, atau sekadar menyapa OlevyaLovers.",
-            whatsapp1: "6281252562727",
+            whatsapp1: "6281333198380",
             address: "Jl. Raya Bakery No. 123, Indonesia",
             mapsUrl: "https://maps.google.com",
             email: "info@olevyabakery.com",

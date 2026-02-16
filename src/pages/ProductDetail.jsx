@@ -6,7 +6,7 @@ import './ProductDetail.css';
 
 const ProductDetail = () => {
     const { id } = useParams();
-    const { products } = useSiteData();
+    const { products, landingPage } = useSiteData();
     const product = products.find(p => p.id === parseInt(id));
 
     if (!product) {
@@ -45,7 +45,7 @@ const ProductDetail = () => {
     const handleWhatsAppClick = () => {
         const message = `Assalamualaikum, saya ingin memesan ${product.name}`;
         const encodedMessage = encodeURIComponent(message);
-        const phoneNumber = "6281252562727";
+        const phoneNumber = landingPage.contact.whatsapp1;
         window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`, '_blank');
     };
 
