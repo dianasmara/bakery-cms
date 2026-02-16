@@ -1,0 +1,91 @@
+/* ProductCard.css */
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+    padding-bottom: 20px;
+    border: 1px solid #f3efee;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(93, 64, 55, 0.1);
+    border-color: #eee0dc;
+}
+
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(93, 64, 55, 0.75);
+    /* Bakery Brown Overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(2px);
+}
+
+.hover-overlay span {
+    color: white;
+    font-weight: 700;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.product-card:hover .hover-overlay {
+    opacity: 1;
+}
+
+.product-info {
+    padding: 15px 15px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: #4a332c;
+}
+
+.product-price {
+    color: #5D4037;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-top: auto;
+}

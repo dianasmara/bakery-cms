@@ -1,0 +1,34 @@
+/* Banner.css */
+.info-banner {
+    background-color: #5D4037;
+    /* Bakery Brown */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.1);
+}
+
+.banner-content p {
+    margin: 5px 0;
+}
+
+.contact-numbers {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-numbers span {
+    background-color: #8D6E63;
+    /* Lighter warm brown for contrast */
+    padding: 6px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
