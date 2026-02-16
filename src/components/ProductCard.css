@@ -89,3 +89,18 @@
     font-size: 1.2rem;
     margin-top: auto;
 }
+
+@media (max-width: 768px) {
+    .product-image-wrapper {
+        height: 160px;
+        padding: 10px;
+    }
+
+    .product-name {
+        font-size: 1rem;
+    }
+
+    .product-price {
+        font-size: 1.05rem;
+    }
+}

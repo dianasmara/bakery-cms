@@ -145,6 +145,7 @@
 
 .price-slider {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 6px;
     background: #eee0dc;
@@ -271,25 +272,206 @@
     font-weight: 600;
 }
 
-/* Responsive */
+/* Filter Chips/Pills Styling */
+.filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill-btn {
+    padding: 8px 16px;
+    background: white;
+    border: 1.5px solid #eee0dc;
+    border-radius: 30px;
+    color: #6d5b55;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pill-btn:hover {
+    border-color: #5D4037;
+    color: #5D4037;
+}
+
+.pill-btn.active {
+    background-color: #5D4037;
+    border-color: #5D4037;
+    color: white;
+}
+
+.desktop-only {
+    display: block;
+}
+
+.filter-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.filter-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.filter-drawer-handle {
+    display: none;
+}
+
+.filter-header-mobile {
+    display: none;
+}
+
+.filter-footer-mobile {
+    display: none;
+}
+
+/* Responsive Update */
+.mobile-filter-toggle {
+    display: none;
+    width: 100%;
+    padding: 14px;
+    background-color: white;
+    color: #4a332c;
+    border: 1.5px solid #eee0dc;
+    border-radius: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 @media (max-width: 900px) {
+    .product-list-page {
+        padding: 20px 0;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
     .product-list-page .container {
         flex-direction: column;
-        gap: 20px;
+        gap: 0;
+    }
+
+    .mobile-filter-toggle {
+        display: flex;
     }
 
     .filter-sidebar {
-        flex: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        position: static;
+        background: white;
+        z-index: 2000;
+        border-radius: 24px 24px 0 0;
+        padding: 0;
+        max-height: 85vh;
+        transform: translateY(100%);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.4s;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .filter-sidebar.show {
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .filter-drawer-handle {
+        display: block;
+        width: 40px;
+        height: 4px;
+        background: #eee0dc;
+        border-radius: 2px;
+        margin: 12px auto;
+        flex-shrink: 0;
+    }
+
+    .filter-group {
+        padding: 0 20px 100px;
+        border: none;
+        box-shadow: none;
+        overflow-y: auto;
+    }
+
+    .filter-header-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #f3efee;
+    }
+
+    .filter-header-mobile .filter-label {
+        margin-bottom: 0;
+        border: none;
+        padding: 0;
+    }
+
+    .reset-link {
+        background: none;
+        border: none;
+        color: #10b981;
+        /* Green reset link like reference */
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 0.95rem;
+    }
+
+    .filter-footer-mobile {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: white;
+        border-top: 1px solid #f3efee;
+    }
+
+    .apply-filter-btn {
+        width: 100%;
+        padding: 16px;
+        background-color: #5D4037;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
     }
 
     .main-content-header {
         flex-direction: column-reverse;
-        align-items: flex-start;
-        top: 0;
-        padding: 20px 0;
+        align-items: stretch;
+        position: static;
+        padding: 10px 0 20px;
         gap: 15px;
+    }
+
+    .results-info {
+        text-align: center;
     }
 
     .inline-search {
@@ -297,7 +479,7 @@
     }
 
     .product-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
     }
 }

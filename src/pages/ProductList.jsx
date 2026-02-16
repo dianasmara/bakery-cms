@@ -11,7 +11,6 @@ const ProductList = () => {
     const [selectedCategory, setSelectedCategory] = useState("Semua");
     const [sortOrder, setSortOrder] = useState("default");
     const [priceRange, setPriceRange] = useState(maxPriceInData);
-    const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
 
     const filteredAndSortedProducts = useMemo(() => {
@@ -41,57 +40,80 @@ const ProductList = () => {
         }
 
         return result;
-    }, [selectedCategory, sortOrder, priceRange, searchQuery]);
+    }, [selectedCategory, sortOrder, priceRange, searchQuery, products]);
+
+    const [showFilters, setShowFilters] = useState(false);
+
+    const resetFilters = () => {
+        setSelectedCategory("Semua");
+        setSortOrder("default");
+        setPriceRange(maxPriceInData);
+        setSearchQuery("");
+    };
 
     return (
         <div className="product-list-page">
-            <div className="container">
-                <div className="filter-sidebar">
-                    <div className="filter-group">
-                        <h3 className="filter-label">Filter & Urutkan</h3>
+            {/* Backdrop for mobile filter */}
+            <div
+                className={`filter-backdrop ${showFilters ? 'show' : ''}`}
+                onClick={() => setShowFilters(false)}
+            />
 
-                        {/* Category Dropdown */}
+            <div className="container">
+                <button
+                    className="mobile-filter-toggle"
+                    onClick={() => setShowFilters(!showFilters)}
+                >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                    Filter & Urutkan
+                </button>
+
+                <div className={`filter-sidebar ${showFilters ? 'show' : ''}`}>
+                    <div className="filter-drawer-handle"></div>
+                    <div className="filter-group">
+                        <div className="filter-header-mobile">
+                            <h3 className="filter-label">Filter</h3>
+                            <button className="reset-link" onClick={resetFilters}>Reset</button>
+                        </div>
+                        <h3 className="filter-label desktop-only">Filter & Urutkan</h3>
+
+                        {/* Category Select */}
                         <div className="filter-item">
                             <label>Kategori</label>
-                            <div className="custom-dropdown">
-                                <button
-                                    className="dropdown-trigger"
-                                    onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
-                                >
-                                    {selectedCategory}
-                                    <span className={`arrow ${showCategoryDropdown ? 'open' : ''}`}>▼</span>
-                                </button>
-                                {showCategoryDropdown && (
-                                    <ul className="dropdown-menu">
-                                        {categories.map(cat => (
-                                            <li
-                                                key={cat}
-                                                className={selectedCategory === cat ? 'active' : ''}
-                                                onClick={() => {
-                                                    setSelectedCategory(cat);
-                                                    setShowCategoryDropdown(false);
-                                                }}
-                                            >
-                                                {cat}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </div>
-                        </div>
-
-                        {/* Sorting Dropdown */}
-                        <div className="filter-item">
-                            <label>Urutkan Harga</label>
                             <select
                                 className="filter-select"
-                                value={sortOrder}
-                                onChange={(e) => setSortOrder(e.target.value)}
+                                value={selectedCategory}
+                                onChange={(e) => setSelectedCategory(e.target.value)}
                             >
-                                <option value="default">Terbaru</option>
-                                <option value="low-to-high">Harga: Rendah ke Tinggi</option>
-                                <option value="high-to-low">Harga: Tinggi ke Rendah</option>
+                                {categories.map(cat => (
+                                    <option key={cat} value={cat}>{cat}</option>
+                                ))}
                             </select>
+                        </div>
+
+                        {/* Sorting Pills */}
+                        <div className="filter-item">
+                            <label>Urutkan Harga</label>
+                            <div className="filter-pills">
+                                <button
+                                    className={`pill-btn ${sortOrder === 'default' ? 'active' : ''}`}
+                                    onClick={() => setSortOrder('default')}
+                                >
+                                    Terbaru
+                                </button>
+                                <button
+                                    className={`pill-btn ${sortOrder === 'low-to-high' ? 'active' : ''}`}
+                                    onClick={() => setSortOrder('low-to-high')}
+                                >
+                                    Terendah
+                                </button>
+                                <button
+                                    className={`pill-btn ${sortOrder === 'high-to-low' ? 'active' : ''}`}
+                                    onClick={() => setSortOrder('high-to-low')}
+                                >
+                                    Tertinggi
+                                </button>
+                            </div>
                         </div>
 
                         {/* Price Range Filter */}
@@ -115,16 +137,17 @@ const ProductList = () => {
                         </div>
 
                         <button
-                            className="reset-filter-btn"
-                            onClick={() => {
-                                setSelectedCategory("Semua");
-                                setSortOrder("default");
-                                setPriceRange(maxPriceInData);
-                                setSearchQuery("");
-                            }}
+                            className="reset-filter-btn desktop-only"
+                            onClick={resetFilters}
                         >
                             Reset Filter
                         </button>
+
+                        <div className="filter-footer-mobile">
+                            <button className="apply-filter-btn" onClick={() => setShowFilters(false)}>
+                                Tampilkan Produk ({filteredAndSortedProducts.length})
+                            </button>
+                        </div>
                     </div>
                 </div>
 

@@ -19,9 +19,22 @@ const ProductDetail = () => {
     // Carousel Logic
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-    const itemsPerPage = 4;
+    const [itemsPerPage, setItemsPerPage] = useState(4);
+
     const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 8);
     const maxIndex = Math.max(0, relatedProducts.length - itemsPerPage);
+
+    // Responsive Carousel Items
+    React.useEffect(() => {
+        const updateItemsPerPage = () => {
+            if (window.innerWidth <= 768) setItemsPerPage(1);
+            else if (window.innerWidth <= 900) setItemsPerPage(2);
+            else setItemsPerPage(4);
+        };
+        updateItemsPerPage();
+        window.addEventListener('resize', updateItemsPerPage);
+        return () => window.removeEventListener('resize', updateItemsPerPage);
+    }, []);
 
     // Auto-play effect
     React.useEffect(() => {
@@ -32,7 +45,7 @@ const ProductDetail = () => {
             }, 3000); // Change every 3 seconds
         }
         return () => clearInterval(interval);
-    }, [isAutoPlaying, currentIndex, maxIndex]);
+    }, [isAutoPlaying, currentIndex, maxIndex, itemsPerPage]);
 
     const handleNext = () => {
         setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));

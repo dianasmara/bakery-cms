@@ -323,16 +323,74 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .hero-section {
+        height: 60vh;
+    }
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        padding: 12px 35px;
+        font-size: 1rem;
     }
 
     .features-section {
         padding: 60px 20px;
     }
 
+    .section-title-dynamic {
+        font-size: 2rem;
+    }
+
+    .features-grid-dynamic {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-item {
+        padding: 25px 20px;
+    }
+
+    .feature-item img {
+        height: 180px;
+    }
+
     .contact-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .contact-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .contact-card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        margin-right: 15px;
+    }
+
+    .contact-value {
+        font-size: 1rem;
     }
 
     .contact-section {

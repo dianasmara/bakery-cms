@@ -8,6 +8,8 @@ const Header = () => {
     const { settings } = useSiteData();
     const { outletName } = settings;
 
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
     return (
         <header className="header">
             <div className="header-container">
@@ -15,11 +17,17 @@ const Header = () => {
                     <img src={Logo} alt={`${outletName} Logo`} className="logo-image" />
                     <span className="outlet-name">{outletName}</span>
                 </Link>
-                <div className="header-right">
+
+                <button className="mobile-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    {isMenuOpen ? '✕' : '☰'}
+                </button>
+
+                <div className={`header-right ${isMenuOpen ? 'open' : ''}`}>
                     <div className="nav-links">
                         <NavLink
                             to="/"
                             className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                            onClick={() => setIsMenuOpen(false)}
                             end
                         >
                             Beranda
@@ -27,6 +35,7 @@ const Header = () => {
                         <NavLink
                             to="/products"
                             className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                            onClick={() => setIsMenuOpen(false)}
                         >
                             Produk
                         </NavLink>

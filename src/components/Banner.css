@@ -32,3 +32,22 @@
     font-weight: bold;
     font-size: 0.85rem;
 }
+
+@media (max-width: 768px) {
+    .info-banner {
+        padding: 20px 15px;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+        border-radius: 0;
+        /* Full width edge to edge looks cleaner on mobile */
+    }
+
+    .contact-numbers {
+        margin-top: 10px;
+    }
+
+    .contact-numbers span {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+    }
+}

@@ -230,3 +230,54 @@
         /* 2 items per page on mobile */
     }
 }
+
+@media (max-width: 768px) {
+    .product-detail-page {
+        padding: 20px 0;
+    }
+
+    .breadcrumb {
+        font-size: 0.72rem;
+        margin-bottom: 12px;
+        opacity: 0.8;
+    }
+
+    .detail-card {
+        margin-bottom: 30px;
+    }
+
+    .detail-image {
+        padding: 20px;
+    }
+
+    .detail-info {
+        padding: 25px 20px;
+    }
+
+    .detail-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .detail-price {
+        font-size: 1.5rem;
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .carousel-slide {
+        flex: 0 0 100%;
+        /* 1 item per page on small mobile */
+    }
+
+    .related-products h3 {
+        font-size: 1.2rem;
+    }
+
+    .nav-btn {
+        padding: 6px 15px;
+        font-size: 0.85rem;
+    }
+}
