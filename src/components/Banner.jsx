@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSiteData } from '../context/SiteContext';
+import { useSiteData } from '../context/SiteContextStore';
 import './Banner.css';
 
 const Banner = () => {

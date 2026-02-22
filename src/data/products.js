@@ -1,17 +1,38 @@
-import DonatCoklatKacang from '../assets/FOTO KUE/DONAT ORI/Donat-Coklat-Kacang-Dea-Bakery-2023 (1).jpeg';
-import DonatMesses from '../assets/FOTO KUE/DONAT ORI/Donat-Messes-Dea-Bakery-2023.jpeg';
-import DonatPinkKicir from '../assets/FOTO KUE/DONAT ORI/Donat-Pink-Kicir-Dea-Bakery-2023 (1).jpeg';
+import DonatCoklatKacang from '../assets/FOTO KUE/DONAT ORI/Donat coklat kacang.png';
+import DonatMesses from '../assets/FOTO KUE/DONAT ORI/Donat meses.png';
+import DonatPinkKicir from '../assets/FOTO KUE/DONAT ORI/Donat whipe cream.png';
+import DonatKacangMerah from '../assets/FOTO KUE/DONAT ORI/Donat kacang  merah.png';
+import DonatKeju from '../assets/FOTO KUE/DONAT ORI/Donat keju.png';
+import DonatAbon from '../assets/FOTO KUE/DONAT ORI/Donat abon.png';
+import DonatIsiAyam from '../assets/FOTO KUE/DONAT ORI/Donat isi ayam.png';
+import DonatRedVelvet from '../assets/FOTO KUE/DONAT ORI/Donat Red Velvet.png';
+
 
 import TartChocoMoonlight from '../assets/FOTO KUE/TART/Whipping-Choco-Moonlight-Dea-Bakery-2023.webp';
 import TartCreamyDelight from '../assets/FOTO KUE/TART/Whipping-Creamy-Delight-Dea-Bakery-2023.webp';
 import TartFlowerStyle from '../assets/FOTO KUE/TART/Whipping-Flower-Style-Dea-Bakery-2023.webp';
 import TartMoccaLovely from '../assets/FOTO KUE/TART/Whipping-Mocca-Lovely-Dea-Bakery-2023.webp';
-import TartSweetHeart from '../assets/FOTO KUE/TART/Whipping-Sweet-Heart-Dea-Bakery-2023.webp';
+import TartSweetHeart from '../assets/FOTO KUE/TART/birthday-cake6.png';
 
-import KueBasah1 from '../assets/FOTO KUE/KUE BASAH/013e0c1b-00e1-4eb4-8d8b-0058ec641b94.png';
-import KueBasah2 from '../assets/FOTO KUE/KUE BASAH/72bfceff-09e9-4af1-b512-a24992af53aa.png';
-import KueBasah3 from '../assets/FOTO KUE/KUE BASAH/a95017d8-7121-436c-a662-91b817be371f.png';
-import KueBasah4 from '../assets/FOTO KUE/KUE BASAH/af6c0e85-6860-4aac-8594-4afdde9dc230.png';
+import lemperAyam from '../assets/FOTO KUE/KUE BASAH/lemper premium.png';
+import pastel from '../assets/FOTO KUE/KUE BASAH/pastel.png';
+import kueCum from '../assets/FOTO KUE/KUE BASAH/kue Cum.png';
+import RisolMayo from '../assets/FOTO KUE/KUE BASAH/risol mayo.png';
+import sosisSolo from '../assets/FOTO KUE/KUE BASAH/sosis solo.png';
+import kroket from '../assets/FOTO KUE/KUE BASAH/kroket.png';
+import miniPizza from '../assets/FOTO KUE/KUE BASAH/mini pizza.png';
+import stickKeju from '../assets/FOTO KUE/KUE BASAH/stick keju.png';
+import DadarGulung from '../assets/FOTO KUE/KUE BASAH/Dadar gulung.png';
+import wajik from '../assets/FOTO KUE/KUE BASAH/wajik.png';
+import talamPisang from '../assets/FOTO KUE/KUE BASAH/Talam pisang.png';
+import talamSrikaya from '../assets/FOTO KUE/KUE BASAH/Talam srikaya.png';
+
+
+
+
+
+
+
 
 // Placeholders for Roti Hajatan (as names are generic)
 import RotiHajatan1 from '../assets/FOTO KUE/ROTI HAJATAN/result_0.webp';
@@ -46,6 +67,52 @@ export const products = [
         description: "Donat dengan glaze strawberry manis dan hiasan cantik.",
         benefits: ["Rasa Buah Segar", "Tampilan Menarik"]
     },
+    {
+        id: 104,
+        name: "Donat Kacang Merah",
+        price: 5500,
+        category: "Donat Ring",
+        image: DonatKacangMerah,
+        description: "Donat dengan isian kacang merah yang lembut dan manis.",
+        benefits: ["Rasa Buah Segar", "Tampilan Menarik"]
+    },
+    {
+        id: 105,
+        name: "Donat Keju",
+        price: 5500,
+        category: "Donat Ring",
+        image: DonatKeju,
+        description: "Donat dengan topping keju parut yang gurih.",
+        benefits: ["Rasa Keju Gurih", "Tampilan Menarik"]
+    },
+    {
+        id: 106,
+        name: "Donat Abon",
+        price: 5500,
+        category: "Donat Ring",
+        image: DonatAbon,
+        description: "Donat dengan topping abon sapi yang gurih.",
+        benefits: ["Rasa Abon Gurih", "Tampilan Menarik"]
+    },
+    {
+        id: 107,
+        name: "Donat Isi Ayam",
+        price: 5500,
+        category: "Donat Ring",
+        image: DonatIsiAyam,
+        description: "Donat dengan isian ayam suwir yang gurih.",
+        benefits: ["Rasa Ayam Gurih", "Tampilan Menarik"]
+    },
+    {
+        id: 108,
+        name: "Donat Red Velvet",
+        price: 5500,
+        category: "Donat Ring",
+        image: DonatRedVelvet,
+        description: "Donat dengan topping red velvet yang lembut dan manis.",
+        benefits: ["Rasa Red Velvet Lembut", "Tampilan Menarik"]
+    },
+
 
     // --- Tart ---
     {
@@ -100,37 +167,117 @@ export const products = [
         name: "Lemper Ayam",
         price: 3500,
         category: "Basahan",
-        image: KueBasah1,
+        image: lemperAyam,
         description: "Ketan gurih isi ayam suwir berbumbu.",
-        benefits: ["Kenyang", "Gurih"]
+        // benefits: ["Kenyang", "Gurih"]
     },
     {
         id: 302,
         name: "Pastel",
         price: 3000,
         category: "Basahan",
-        image: KueBasah2,
+        image: pastel,
         description: "Pastel renyah dengan isian sayur dan telur.",
-        benefits: ["Renya", "Isian Padat"]
+        // benefits: ["Renyah", "Isian Padat"]
     },
     {
         id: 303,
-        name: "Pie Susu",
+        name: "Keu Cum",
         price: 3000,
         category: "Basahan",
-        image: KueBasah3,
-        description: "Pie dengan fla susu yang lembut dan manis.",
-        benefits: ["Kulit Renyah", "Fla Lembut"]
+        image: kueCum,
+        description: " dengan fla susu yang lembut dan manis.",
+        // benefits: ["Kulit Renyah", "Fla Lembut"]
     },
     {
         id: 304,
         name: "Risol Mayo",
         price: 4000,
         category: "Basahan",
-        image: KueBasah4,
+        image: RisolMayo,
         description: "Risol dengan isian mayones, telur, dan daging asap.",
-        benefits: ["Creamy", "Gurih"]
+        //  benefits: ["Creamy", "Gurih"]
     },
+    {
+        id: 305,
+        name: "Sosis Solo",
+        price: 4000,
+        category: "Basahan",
+        image: sosisSolo,
+        description: "Sosis solo dengan isian daging ayam cincang.",
+        //  benefits: ["Creamy", "Gurih"]
+    },
+    {
+        id: 306,
+        name: "Kroket",
+        price: 4000,
+        category: "Basahan",
+        image: kroket,
+        description: "Kroket dengan isian daging ayam kentang dan wortel.",
+        //  benefits: ["Creamy", "Gurih"]
+    },
+    {
+        id: 307,
+        name: "Mini Pizza",
+        price: 4000,
+        category: "Basahan",
+        image: miniPizza,
+        description: "Pizza mini dengan topping sosis dan keju.",
+        //  benefits: ["Creamy", "Gurih"]
+    },
+    {
+        id: 308,
+        name: "Stick Keju",
+        price: 4000,
+        category: "Basahan",
+        image: stickKeju,
+        description: "pastry lembut dengan topping keju parut.",
+        //  benefits: ["Creamy", "Gurih"]
+    },
+    {
+        id: 309,
+        name: "Dadar Gulung",
+        price: 4000,
+        category: "Basahan",
+        image: DadarGulung,
+        description: "Dadar gulung dengan isian kelapa parut.",
+        //  benefits: ["Creamy", "Gurih"]
+    },
+    {
+        id: 310,
+        name: "Wajik",
+        price: 4000,
+        category: "Basahan",
+        image: wajik,
+        description: "Wajik dengan ketan premium dan gula aren.",
+        //  benefits: ["Creamy", "Gurih"]
+    },
+    {
+        id: 311,
+        name: "Talam Pisang",
+        price: 4000,
+        category: "Basahan",
+        image: talamPisang,
+        description: "Talam dengan isian pisang.",
+        //  benefits: ["Creamy", "Gurih"]
+    },
+    {
+        id: 312,
+        name: "Talam Srikaya",
+        price: 4000,
+        category: "Basahan",
+        image: talamSrikaya,
+        description: "Talam ketan dengan fla srikaya.",
+        //  benefits: ["Creamy", "Gurih"]
+    },
+
+
+
+
+
+
+
+
 
     // --- Roti Hajatan ---
     {

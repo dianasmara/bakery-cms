@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useSiteData } from '../../context/SiteContext';
+import { useSiteData } from '../../context/SiteContextStore';
 import './AdminModal.css';
 
 const AdminModal = () => {

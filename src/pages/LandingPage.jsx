@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSiteData } from '../context/SiteContext';
+import { useSiteData } from '../context/SiteContextStore';
 import './LandingPage.css';
 
 const LandingPage = () => {
@@ -58,7 +58,7 @@ const LandingPage = () => {
                             </div>
                             <div className="contact-card-info">
                                 {/* <span className="contact-label">WhatsApp</span> */}
-                                <span className="contact-value">Customer Service 1</span>
+                                <span className="contact-value">Whatsapp</span>
                             </div>
                             <div className="contact-card-arrow">→</div>
                         </a>

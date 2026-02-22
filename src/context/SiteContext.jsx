@@ -1,9 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { SiteContext } from './SiteContextStore';
 import { products as initialProducts, categories as initialCategories } from '../data/products';
-
-const SiteContext = createContext();
-
-export const useSiteData = () => useContext(SiteContext);
 
 export const SiteProvider = ({ children }) => {
     // Initial Site Settings
@@ -20,7 +17,7 @@ export const SiteProvider = ({ children }) => {
             ctaText: "Belanja Sekarang",
             image: "https://image2url.com/r2/default/images/1771268190173-c2f95791-8992-41de-80b9-7d1097282b2c.png",
             bgSize: "contain",
-            bgColor: "#e1a166"
+            bgColor: "#ff8200"
         },
         sections: [
             {
@@ -31,13 +28,13 @@ export const SiteProvider = ({ children }) => {
                     {
                         id: 101,
                         image: "https://picsum.photos/id/1080/400/300",
-                        title: "Bahan Berkualitas",
+                        title: "Pernikahan & Hajatan",
                         description: "Dibuat dari bahan-bahan pilihan terbaik untuk menjaga kualitas rasa."
                     },
                     {
                         id: 102,
                         image: "https://picsum.photos/id/292/400/300",
-                        title: "Dibuat dengan Cinta",
+                        title: "Ulang Tahun",
                         description: "Setiap produk diolah dengan sepenuh hati oleh baker berpengalaman kami."
                     },
                     {

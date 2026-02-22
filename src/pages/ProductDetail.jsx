@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useSiteData } from '../context/SiteContext';
+import { useSiteData } from '../context/SiteContextStore';
 import Banner from '../components/Banner';
 import './ProductDetail.css';
 

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import ProductCard from '../components/ProductCard';
-import { useSiteData } from '../context/SiteContext';
+import { useSiteData } from '../context/SiteContextStore';
 import './ProductList.css';
 
 const ProductList = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { useSiteData } from '../context/SiteContext';
+import { useSiteData } from '../context/SiteContextStore';
 import Logo from '../assets/image/logo.png';
 import './Header.css';
 
