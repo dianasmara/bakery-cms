@@ -4,10 +4,10 @@ import { products as initialProducts, categories as initialCategories } from '..
 
 // Feature Images Imports
 import coverHajatan from '../assets/FOTO KUE/ROTI HAJATAN/coverHajatan.jpg';
-import RotiHajatan1 from '../assets/FOTO KUE/ROTI HAJATAN/RotiHajatan1.jpg';
-import RotiHajatan2 from '../assets/FOTO KUE/ROTI HAJATAN/RotiHajatan2.jpg';
-import RotiHajatan3 from '../assets/FOTO KUE/ROTI HAJATAN/RotiHajatan3.png';
-import RotiHajatan4 from '../assets/FOTO KUE/ROTI HAJATAN/RotiHajatan4.webp';
+import RotiHajatan1 from '../assets/FOTO KUE/ROTI HAJATAN/rotiHajatan1.jpg';
+import RotiHajatan2 from '../assets/FOTO KUE/ROTI HAJATAN/rotiHajatan2.jpg';
+import RotiHajatan3 from '../assets/FOTO KUE/ROTI HAJATAN/rotiHajatan3.png';
+import RotiHajatan4 from '../assets/FOTO KUE/ROTI HAJATAN/rotiHajatan4.webp';
 
 import BirthdayCake1 from '../assets/FOTO KUE/TART/BirthdayCake1.jpg';
 import BirthdayCake2 from '../assets/FOTO KUE/TART/BirthdayCake2.jpg';
