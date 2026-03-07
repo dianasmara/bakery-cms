@@ -6,7 +6,7 @@ import DonatKacangMerah from '../assets/FOTO KUE/DONAT ORI/Donat kacang  merah.p
 import DonatKeju from '../assets/FOTO KUE/DONAT ORI/Donat keju.png';
 import DonatAbon from '../assets/FOTO KUE/DONAT ORI/Donat abon.png';
 import DonatIsiAyam from '../assets/FOTO KUE/DONAT ORI/Donat isi ayam.png';
-import DonatRedVelvet from '../assets/FOTO KUE/DONAT ORI/Donat Red Velvet.png';
+import DonatRedVelvet from '../assets/FOTO KUE/DONAT ORI/Donat red velvet.png';
 
 // TART
 import BirthdayCake1 from '../assets/FOTO KUE/TART/BirthdayCake1.jpg';
@@ -18,7 +18,7 @@ import BirthdayCake5 from '../assets/FOTO KUE/TART/BirthdayCake5.png';
 //KUE BASAH
 import lemperAyam from '../assets/FOTO KUE/KUE BASAH/lemper premium.png';
 import pastel from '../assets/FOTO KUE/KUE BASAH/pastel.png';
-import kueCum from '../assets/FOTO KUE/KUE BASAH/kue Cum.png';
+import kueCum from '../assets/FOTO KUE/KUE BASAH/kue cum.png';
 import RisolMayo from '../assets/FOTO KUE/KUE BASAH/risol mayo.png';
 import sosisSolo from '../assets/FOTO KUE/KUE BASAH/sosis solo.png';
 import kroket from '../assets/FOTO KUE/KUE BASAH/kroket.png';
@@ -30,29 +30,29 @@ import talamPisang from '../assets/FOTO KUE/KUE BASAH/Talam pisang.png';
 import talamSrikaya from '../assets/FOTO KUE/KUE BASAH/Talam srikaya.png';
 
 //ROTI HAJATAN
-import RotiHajatan1 from '../assets/FOTO KUE/ROTI HAJATAN/RotiHajatan1.jpg';
-import RotiHajatan2 from '../assets/FOTO KUE/ROTI HAJATAN/RotiHajatan2.jpg';
-import RotiHajatan3 from '../assets/FOTO KUE/ROTI HAJATAN/RotiHajatan3.png';
-import RotiHajatan4 from '../assets/FOTO KUE/ROTI HAJATAN/RotiHajatan4.webp';
+import RotiHajatan1 from '../assets/FOTO KUE/ROTI HAJATAN/rotiHajatan1.jpg';
+import RotiHajatan2 from '../assets/FOTO KUE/ROTI HAJATAN/rotiHajatan2.jpg';
+import RotiHajatan3 from '../assets/FOTO KUE/ROTI HAJATAN/rotiHajatan3.png';
+import RotiHajatan4 from '../assets/FOTO KUE/ROTI HAJATAN/rotiHajatan4.webp';
 
 
 //cookies
-import nastar from '../assets/FOTO KUE/cookies/nastar.jpg';
-import kastengel from '../assets/FOTO KUE/cookies/kastengel.jpg';
-import susCoklat from '../assets/FOTO KUE/cookies/susCoklat.jpg';
-import almondRaisin from '../assets/FOTO KUE/cookies/almondRaisin.png';
-import butterCoklat from '../assets/FOTO KUE/cookies/butterCoklat.png';
-import butterVanilla from '../assets/FOTO KUE/cookies/butterVanilla.png';
-import cornFlake from '../assets/FOTO KUE/cookies/cornFlake.png';
-import lidahKucing from '../assets/FOTO KUE/cookies/lidahKucing.png';
-import macaroonCoklatBlast from '../assets/FOTO KUE/cookies/macaroonCoklatBlast.png';
-import macaroonLemon from '../assets/FOTO KUE/cookies/macaroonLemon.png';
-import macaroonRedVelvet from '../assets/FOTO KUE/cookies/macaroonRedVelvet.png';
-import macaroonMatcha from '../assets/FOTO KUE/cookies/macaroonMatcha.png';
-import palmSugar from '../assets/FOTO KUE/cookies/palmSugar.png';
-import putriSalju from '../assets/FOTO KUE/cookies/putriSalju.png';
-import saguKelapa from '../assets/FOTO KUE/cookies/saguKelapa.png';
-import sempritKeju from '../assets/FOTO KUE/cookies/sempritKeju.png';
+import nastar from '../assets/FOTO KUE/Cookies/nastar.jpg';
+import kastengel from '../assets/FOTO KUE/Cookies/kastengel.jpg';
+import susCoklat from '../assets/FOTO KUE/Cookies/susCoklat.jpg';
+import almondRaisin from '../assets/FOTO KUE/Cookies/almondRaisin.png';
+import butterCoklat from '../assets/FOTO KUE/Cookies/butterCoklat.png';
+import butterVanilla from '../assets/FOTO KUE/Cookies/butterVanilla.png';
+import cornFlake from '../assets/FOTO KUE/Cookies/cornFlake.png';
+import lidahKucing from '../assets/FOTO KUE/Cookies/lidahKucing.png';
+import macaroonCoklatBlast from '../assets/FOTO KUE/Cookies/macaroonCoklatBlast.png';
+import macaroonLemon from '../assets/FOTO KUE/Cookies/macaroonLemon.png';
+import macaroonRedVelvet from '../assets/FOTO KUE/Cookies/macaroonRedVelvet.png';
+import macaroonMatcha from '../assets/FOTO KUE/Cookies/macaroonMatcha.png';
+import palmSugar from '../assets/FOTO KUE/Cookies/palmSugar.png';
+import putriSalju from '../assets/FOTO KUE/Cookies/putriSalju.png';
+import saguKelapa from '../assets/FOTO KUE/Cookies/saguKelapa.png';
+import sempritKeju from '../assets/FOTO KUE/Cookies/sempritKeju.png';
 
 
 // CAKE UTUH
@@ -66,11 +66,11 @@ import BrowniesOvenAlmond from '../assets/FOTO KUE/CAKE UTUH/BrowniesOvenAlmond.
 import JapaneseCheeseCake from '../assets/FOTO KUE/CAKE UTUH/JapaneseCheeseCake.png';
 
 //croissant
-import CroissantOriginal from '../assets/FOTO KUE/croissant/CroissantOriginal.png';
-import CroissantRedVelvet from '../assets/FOTO KUE/croissant/CroissanRedVelvet.png';
-import CroissantCinnamondRoll from '../assets/FOTO KUE/croissant/CroissantCinnamondRoll.png';
-import CroissantMuffin from '../assets/FOTO KUE/croissant/CroissantMuffin.png';
-import CroissantSmokedBeefCheese from '../assets/FOTO KUE/croissant/CroissantSmokedBeefCheese.png';
+import CroissantOriginal from '../assets/FOTO KUE/Croissant/CroissantOriginal.png';
+import CroissantRedVelvet from '../assets/FOTO KUE/Croissant/CroissanRedVelvet.png';
+import CroissantCinnamondRoll from '../assets/FOTO KUE/Croissant/CroissantCinnamondRoll.png';
+import CroissantMuffin from '../assets/FOTO KUE/Croissant/CroissantMuffin.png';
+import CroissantSmokedBeefCheese from '../assets/FOTO KUE/Croissant/CroissantSmokedBeefCheese.png';
 
 // ROLL GULUNG
 import RollGulungRedVelvet from '../assets/FOTO KUE/ROLL GULUNG/RolGulungRedVelvet.png';
