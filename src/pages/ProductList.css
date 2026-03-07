@@ -1,7 +1,7 @@
 /* ProductList.css */
 .product-list-page {
     padding: 40px 0;
-    background-color: #fbf9f8;
+    background-color: #fcf4c1;
     min-height: 80vh;
 }
 
@@ -22,11 +22,11 @@
 }
 
 .filter-group {
-    background: white;
+    background: #ff8000;
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(93, 64, 55, 0.05);
-    border: 1px solid #f3efee;
+    border: 1px solid #e67300;
 }
 
 .filter-label {
@@ -211,7 +211,7 @@
     position: sticky;
     top: 80px;
     /* Below the main header */
-    background-color: #fbf9f8;
+    background-color: #fcf4c1;
     padding: 15px 0;
     z-index: 5;
     gap: 20px;
@@ -266,9 +266,9 @@
 .no-results {
     text-align: center;
     padding: 80px 20px;
-    background: white;
+    background: #ff8000;
     border-radius: 20px;
-    color: #8a7b76;
+    color: #3e2723;
     font-weight: 600;
 }
 
@@ -281,10 +281,10 @@
 
 .pill-btn {
     padding: 8px 16px;
-    background: white;
-    border: 1.5px solid #eee0dc;
+    background: #ff9b30;
+    border: 1.5px solid #e67300;
     border-radius: 30px;
-    color: #6d5b55;
+    color: #3e2723;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
@@ -377,7 +377,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background: white;
+        background: #ff8000;
         z-index: 2000;
         border-radius: 24px 24px 0 0;
         padding: 0;
@@ -446,8 +446,8 @@
         left: 0;
         width: 100%;
         padding: 20px;
-        background: white;
-        border-top: 1px solid #f3efee;
+        background: #ff8000;
+        border-top: 1px solid #e67300;
     }
 
     .apply-filter-btn {

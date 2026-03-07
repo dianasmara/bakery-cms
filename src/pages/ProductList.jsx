@@ -92,7 +92,7 @@ const ProductList = () => {
                         </div>
 
                         {/* Sorting Pills */}
-                        <div className="filter-item">
+                        {/* <div className="filter-item">
                             <label>Urutkan Harga</label>
                             <div className="filter-pills">
                                 <button
@@ -114,10 +114,10 @@ const ProductList = () => {
                                     Tertinggi
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Price Range Filter */}
-                        <div className="filter-item">
+                        {/* <div className="filter-item">
                             <label>Batas Harga (Max)</label>
                             <div className="price-range-container">
                                 <input
@@ -134,14 +134,14 @@ const ProductList = () => {
                                     <span className="current-price">Rp {priceRange.toLocaleString('id-ID')}</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
-                        <button
+                        {/* <button
                             className="reset-filter-btn desktop-only"
                             onClick={resetFilters}
                         >
                             Reset Filter
-                        </button>
+                        </button> */}
 
                         <div className="filter-footer-mobile">
                             <button className="apply-filter-btn" onClick={() => setShowFilters(false)}>

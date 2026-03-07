@@ -1,31 +1,152 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSiteData } from '../context/SiteContextStore';
 import './LandingPage.css';
+
+const FeatureCarousel = ({ images, title }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        if (!images || images.length <= 1) return;
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 4000); // Feature slides every 4 seconds
+        return () => clearInterval(interval);
+    }, [images]);
+
+    if (!images || images.length === 0) return null;
+
+    return (
+        <div className="feature-carousel">
+            {images.map((img, idx) => (
+                <img
+                    key={idx}
+                    src={img}
+                    alt={`${title} ${idx + 1}`}
+                    className={`feature-slide ${idx === currentIndex ? 'active' : ''}`}
+                />
+            ))}
+            {images.length > 1 && (
+                <div className="feature-dots">
+                    {images.map((_, idx) => (
+                        <span
+                            key={idx}
+                            className={`f-dot ${idx === currentIndex ? 'active' : ''}`}
+                            onClick={() => setCurrentIndex(idx)}
+                        />
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
+
+const BannerSlider = ({ images }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        if (!images || images.length <= 1) return;
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [images]);
+
+    if (!images || images.length === 0) return null;
+
+    const prev = () => setCurrentIndex((i) => (i - 1 + images.length) % images.length);
+    const next = () => setCurrentIndex((i) => (i + 1) % images.length);
+
+    return (
+        <section className="banner-slider-section">
+            <div className="banner-slider-track">
+                {images.map((img, idx) => (
+                    <img
+                        key={idx}
+                        src={img}
+                        alt={`Banner ${idx + 1}`}
+                        className={`banner-slide-img ${idx === currentIndex ? 'active' : ''}`}
+                    />
+                ))}
+                {images.length > 1 && (
+                    <>
+                        <button className="banner-arrow banner-arrow-prev" onClick={prev} aria-label="Previous">&#8249;</button>
+                        <button className="banner-arrow banner-arrow-next" onClick={next} aria-label="Next">&#8250;</button>
+                        <div className="banner-dots">
+                            {images.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    className={`banner-dot ${idx === currentIndex ? 'active' : ''}`}
+                                    onClick={() => setCurrentIndex(idx)}
+                                    aria-label={`Go to slide ${idx + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </>
+                )}
+            </div>
+        </section>
+    );
+};
 
 const LandingPage = () => {
     const { landingPage } = useSiteData();
     const { hero, sections, contact } = landingPage;
 
+    const heroImages = hero.images || [hero.image];
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        if (heroImages.length <= 1) return;
+
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+        }, 5000); // Change image every 5 seconds
+
+        return () => clearInterval(interval);
+    }, [heroImages]);
+
     return (
         <div className="landing-page">
-            <section
-                className="hero-section"
-                style={{
-                    backgroundImage: `url(${hero.image})`,
-                    backgroundSize: hero.bgSize || 'cover',
-                    backgroundColor: hero.bgColor || '#f8f5f4'
-                }}
-            >
-                <div className="hero-overlay"></div>
+            <section className="hero-section" style={{ backgroundColor: hero.bgColor || '#f8f5f4' }}>
+                <div className="hero-slider-container">
+                    <div className="hero-slider">
+                        {heroImages.map((image, index) => (
+                            <div
+                                key={index}
+                                className={`hero-slide ${index === currentImageIndex ? 'active' : ''}`}
+                                style={{
+                                    backgroundImage: `url(${image})`,
+                                    backgroundSize: hero.bgSize || 'cover'
+                                }}
+                            />
+                        ))}
+                    </div>
+                    {heroImages.length > 1 && (
+                        <div className="hero-dots">
+                            {heroImages.map((_, index) => (
+                                <button
+                                    key={index}
+                                    className={`dot ${index === currentImageIndex ? 'active' : ''}`}
+                                    onClick={() => setCurrentImageIndex(index)}
+                                    aria-label={`Go to slide ${index + 1}`}
+                                />
+                            ))}
+                        </div>
+                    )}
+                    <Link to="/products" className="cta-button-overlay">{hero.ctaText}</Link>
+                </div>
+
                 <div className="hero-content">
                     <h1 className="hero-title">{hero.title}</h1>
                     <p className="hero-subtitle">{hero.subtitle}</p>
-                    <Link to="/products" className="cta-button">{hero.ctaText}</Link>
                 </div>
             </section>
 
             {sections && sections.map((section) => {
+                if (section.type === 'banner-slider') {
+                    return <BannerSlider key={section.id} images={section.images} />;
+                }
                 if (section.type === 'features') {
                     return (
                         <section key={section.id} className="features-section">
@@ -33,12 +154,38 @@ const LandingPage = () => {
                             <div className="features-grid-dynamic">
                                 {section.items.map((item, idx) => (
                                     <div key={item.id} className={`feature-item fade-in-up delay-${idx}`}>
-                                        <img src={item.image} alt={item.title} />
+                                        <FeatureCarousel images={item.images} title={item.title} />
                                         <h3>{item.title}</h3>
                                         <p>{item.description}</p>
                                     </div>
                                 ))}
                             </div>
+                        </section>
+                    );
+                }
+                if (section.type === 'design-box') {
+                    return (
+                        <section key={section.id} className="design-box-section">
+                            <div className="design-box-accent-bar top"></div>
+                            <div className="design-box-container">
+                                <div className="design-box-content">
+                                    <h2 className="design-box-title">{section.title}</h2>
+                                    <p className="design-box-subtitle">{section.subtitle}</p>
+                                    <div className="design-box-badges">
+                                        <div className="d-badge"><span className="icon">✓</span> Free Design</div>
+                                        <div className="d-badge"><span className="icon">✓</span> Exclusive</div>
+                                        <div className="d-badge"><span className="icon">✓</span> Premium Box</div>
+                                    </div>
+                                </div>
+                                <div className="design-box-showcase">
+                                    {section.images?.map((img, idx) => (
+                                        <div key={idx} className={`box-card card-${idx}`}>
+                                            <img src={img} alt={`Design Box ${idx + 1}`} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="design-box-accent-bar bottom"></div>
                         </section>
                     );
                 }
@@ -74,16 +221,16 @@ const LandingPage = () => {
                             <div className="contact-card-arrow">→</div>
                         </a>
 
-                        <a href={`mailto:${contact.email}`} className="contact-card">
+                        {/* <a href={`mailto:${contact.email}`} className="contact-card">
                             <div className="contact-card-icon mail">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             </div>
                             <div className="contact-card-info">
-                                {/* <span className="contact-label">Email</span> */}
+                                 <span className="contact-label">Email</span> 
                                 <span className="contact-value">{contact.email}</span>
                             </div>
                             <div className="contact-card-arrow">→</div>
-                        </a>
+                        </a> */}
 
                         <a href={`https://instagram.com/${contact.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="contact-card">
                             <div className="contact-card-icon ig">
@@ -98,6 +245,9 @@ const LandingPage = () => {
                     </div>
                 </div>
             </section>
+            <footer className="site-footer">
+                <p>© 2026 Olevya_Bakery | All Rights Reserved</p>
+            </footer>
         </div>
     );
 };
